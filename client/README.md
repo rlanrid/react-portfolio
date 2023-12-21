@@ -9,4 +9,6 @@ React로 포트폴리오 사이트를 제작하였습니다.
 - `npm i split-type`
 - `npm i @studio-freight/lenis`
 
-2. Vite로 작업한 코드 React로 옮기기
+
+### 테스트
+테스트입니다.
