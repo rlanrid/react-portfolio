@@ -88,7 +88,7 @@ export function appear() {
 
         ScrollTrigger.create({
             trigger: introSection,
-            start: "190px bottom",
+            start: "top center",
             end: "bottom top",
             once: true,
             onEnter: () => {
@@ -122,18 +122,26 @@ export function appear() {
 
 export function sliderAppar() {
     // intro - sliderTrack 만들기
-    // const sliderTrackContents = document.querySelector('#sliderTrack1').innerHTML;
-    // console.log(sliderTrackContents)
+    const sliderTrack1 = document.querySelector('#sliderTrack1');
+    if (!sliderTrack1) {
+        console.error("sliderTrack1이 존재하지 않습니다.");
+        return;
+    }
 
+    const sliderTrackContents = sliderTrack1.innerHTML;
+    console.log(sliderTrackContents);
 
-    // const newSliderTrack = document.createElement('div');
+    const newSliderTrack = document.createElement('div');
+    newSliderTrack.classList.add('slider__track');
+    newSliderTrack.id = 'sliderTrack2';
 
-    // newSliderTrack.classList.add('slider__track');
-    // newSliderTrack.id = 'sliderTrack2';
+    const sliderWrap = document.querySelector('.slider__wrap');
+    sliderWrap.appendChild(newSliderTrack);
 
-    // const sliderTrack2 = document.querySelector('#sliderTrack2');
-    // sliderTrack2.innerHTML = sliderTrackContents;
-
-    // const sliderWrap = document.querySelector('.slider__wrap');
-    // sliderWrap.appendChild(newSliderTrack);
+    const sliderTrack2 = document.querySelector('#sliderTrack2');
+    if (sliderTrack2) {
+        sliderTrack2.innerHTML = sliderTrackContents;
+    } else {
+        console.error("sliderTrack2가 존재하지 않습니다.");
+    }
 }

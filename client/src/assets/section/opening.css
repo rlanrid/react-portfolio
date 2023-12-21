@@ -178,7 +178,7 @@
     }
 }
 
-@media(max-width:780px) {
+@media(max-width:670px) {
     .open__text .oText {
         flex-direction: column;
     }
@@ -207,5 +207,12 @@
 @media(max-width:480px) {
     .open__text {
         font-size: 15vw;
+    }
+}
+
+@media(max-width:370px) {
+    .text__gif {
+        width: 130px;
+        height: 130px;
     }
 }
