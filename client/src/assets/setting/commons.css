@@ -135,6 +135,12 @@ canvas {
     visibility: hidden;
 }
 
+.input__style {
+    width: 80%;
+    padding: 15px;
+    font-family: var(--mainfont-abel);
+}
+
 
 /* 반응형 */
 @media(max-width:1280px) {

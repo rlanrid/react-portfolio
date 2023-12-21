@@ -6,6 +6,14 @@ const app = express();
 const port = 5050;
 const config = require("./config/key.js");
 
+app.use(express.static(path.join(__dirname, "../client/build")));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// express router
+app.use("/api/user", require('./router/user.js'));
+app.use("/api/comment", require('./router/comment.js'));
+
 app.listen(port, () => {
     mongoose
         .connect(config.mongoURI)
@@ -17,3 +25,10 @@ app.listen(port, () => {
             console.log(err)
         })
 })
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+})
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});

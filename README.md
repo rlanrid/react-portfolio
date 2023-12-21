@@ -8,6 +8,7 @@ React로 포트폴리오 사이트를 제작하였습니다.
 - `npm install gsap`
 - `npm i split-type`
 - `npm i @studio-freight/lenis`
+- `npm i react-icons`
 
 2. Vite로 작업한 코드 React로 옮기기
 

@@ -17,6 +17,8 @@ import { appear } from '../utils/apper'
 import { mouse } from '../utils/mouse'
 import Progress from '../components/section/Progress'
 import Canvas from '../components/section/Canvas'
+import UserJoin from '../components/user/UserJoin'
+import UserLogin from '../components/user/UserLogin'
 
 const HomeView = () => {
     return (
@@ -33,6 +35,8 @@ const HomeView = () => {
                 <Stack arrowImg={ArrowImg} arrowAlt="화살표이미지" />
                 <Contact arrowImg={ArrowImg} arrowAlt="화살표이미지" />
                 <Comment arrowImg={ArrowImg} arrowAlt="화살표이미지" />
+                <UserJoin />
+                <UserLogin />
             </Main>
             <Footer />
             <Line />

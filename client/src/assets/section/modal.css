@@ -1,0 +1,19 @@
+.join__wrap {
+    width: 100%;
+    background-color: #fff;
+}
+
+.join__form button {
+    background-color: var(--primary-color);
+    color: var(--gainsboro);
+}
+
+.login__wrap {
+    width: 100%;
+    background-color: #fff;
+}
+
+.login__form button {
+    background-color: var(--primary-color);
+    color: var(--gainsboro);
+}

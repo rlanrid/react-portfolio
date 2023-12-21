@@ -122,8 +122,10 @@ export function appear() {
 
 export function sliderAppar() {
     // intro - sliderTrack 만들기
-    const sliderTrackContents = document.querySelector('#sliderTrack1').innerHTML;
-    console.log(sliderTrackContents)
+    // const sliderTrackContents = document.querySelector('#sliderTrack1').innerHTML;
+    // console.log(sliderTrackContents)
+
+
     // const newSliderTrack = document.createElement('div');
 
     // newSliderTrack.classList.add('slider__track');

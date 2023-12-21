@@ -1,4 +1,6 @@
 import React from 'react'
+import CommentWrite from '../comment/CommentWrite'
+import CommentList from '../comment/CommentList'
 
 const Comment = (props) => {
     return (
@@ -11,61 +13,8 @@ const Comment = (props) => {
                     <div className="title__line"></div>
                 </div>
                 <div className="comment__cont">
-                    <div className="comment__form">
-                        <input type="text" placeholder="Write Your Name" />
-                        <textarea placeholder="Leave a Comment"></textarea>
-                        <button>Write</button>
-                    </div>
-                    <div className="comment__list">
-                        <div className="list__col c1">
-                            <div className="list">
-                                <div className="co__title">
-                                    안녕하세요
-                                </div>
-                                <div className="co__author">
-                                    글쓴이
-                                </div>
-                            </div>
-                            <div className="list">
-                                <div className="co__title">
-                                    안녕하세요
-                                </div>
-                                <div className="co__author">
-                                    글쓴이
-                                </div>
-                            </div>
-                        </div>
-                        <div className="list__col c2">
-                            <div className="list">
-                                <div className="co__title">
-                                    안녕하세요
-                                </div>
-                                <div className="co__author">
-                                    글쓴이
-                                </div>
-                            </div>
-                        </div>
-                        <div className="list__col c3">
-                            <div className="list">
-                                <div className="co__title">
-                                    안녕하세요
-                                </div>
-                                <div className="co__author">
-                                    글쓴이
-                                </div>
-                            </div>
-                        </div>
-                        <div className="list__col c4">
-                            <div className="list">
-                                <div className="co__title">
-                                    안녕하세요
-                                </div>
-                                <div className="co__author">
-                                    글쓴이
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <CommentWrite />
+                    <CommentList />
                 </div>
             </div>
         </section>
