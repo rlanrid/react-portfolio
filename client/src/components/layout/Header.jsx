@@ -18,9 +18,16 @@ const Header = (props) => {
                 <div className="header__container">
                     <div className="header__logo">
                         <div className="logo__text">
-                            <a href="/">
-                                Frontend Developer - W<i>oojoo</i><em>K<i>im</i></em>
-                            </a>
+                            {user.accessToken === "" ? (
+                                <a href="/">
+                                    Frontend Developer - W<i>oojoo</i><em>K<i>im</i></em>
+                                </a>
+                            ) : (
+                                <a href="/" className='logged'>
+                                    Welcome To My Portfolio, <strong>{user.displayName}</strong>
+                                </a>
+                            )}
+
                         </div>
                     </div>
                     <nav className="nav">

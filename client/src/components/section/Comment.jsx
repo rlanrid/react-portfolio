@@ -23,9 +23,14 @@ const Comment = (props) => {
                 <div className="comment__title secT">
                     <img src={props.arrowImg} alt={props.arrowAlt} />
                     <h2>Comment</h2>
-                    <div className="comment__filter">
-                        <LuClipboardList onClick={() => { filterHandler(isFilter) }} />
-                    </div>
+                    {user.accessToken ? (
+                        <div className="comment__filter">
+                            <LuClipboardList onClick={() => { filterHandler(isFilter) }} />
+                        </div>
+                    ) : (
+                        <></>
+                    )}
+
                     <div className="title__line"></div>
                 </div>
                 <div className="comment__cont">

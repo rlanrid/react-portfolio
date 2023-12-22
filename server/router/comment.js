@@ -32,7 +32,7 @@ router.post("/list", (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-            return res.status(400).json({ success: false })
+            return res.status(400).json({ success: false });
         })
 })
 
@@ -62,6 +62,33 @@ router.post("/delete", (req, res) => {
         })
 })
 
+
+router.post("/filter", (req, res) => {
+    let temp = req.body.uid;
+
+    console.log(temp)
+
+    User.findOne({ uid: temp })
+        .exec()
+        .then((result) => {
+            temp = result._id;
+
+            Comment
+                .find({ $or: [{ author: temp }] })
+                .populate("author")
+                .sort({ createdAt: -1 })
+                .limit(12)
+                .exec()
+                .then((commentInfo) => {
+                    console.log(commentInfo)
+                    return res.status(200).json({ success: true, commentList: commentInfo });
+                })
+                .catch((err) => {
+                    console.log(err);
+                    return res.status(400).json({ success: false });
+                })
+        })
+})
 
 
 

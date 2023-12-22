@@ -126,7 +126,6 @@
     width: 30px;
     height: 30px;
     cursor: pointer;
-    margin-right: 18px;
     display: none;
 }
 
@@ -161,6 +160,11 @@
     transition: width 0.3s;
 }
 
+.logged>strong {
+    font-weight: 800;
+    text-shadow: 0px 0px 10px var(--gainsboro);
+}
+
 @media(max-width: 780px) {
     .nav {
         display: none;
@@ -185,7 +189,7 @@
     .nav.show li {
         display: block;
         text-align: right;
-        margin-right: 18px;
+        margin-right: 20px;
     }
 
     .nav__mobile__menu {

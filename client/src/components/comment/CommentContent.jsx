@@ -72,8 +72,11 @@ const CommentContent = (props) => {
                 </div>
             ) : (
                 <>
-                    <div className="co__title">
-                        {props.comment.comment}
+                    <div className="co__info">
+                        <p className='co__title'>{props.comment.comment}</p>
+                        <div className="co__author">
+                            - {props.comment.author.displayName}
+                        </div>
                     </div>
                     {props.comment.author.uid === user.uid && (
                         <div className="co__edit">
@@ -88,9 +91,6 @@ const CommentContent = (props) => {
                 </>
 
             )}
-            <div className="co__author">
-                {props.comment.author.displayName}
-            </div>
         </div>
     )
 }

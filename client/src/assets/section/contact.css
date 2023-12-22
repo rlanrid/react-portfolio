@@ -111,6 +111,11 @@
     .contact__cont .email {
         font-size: 6vw;
     }
+
+    .contact__cont .light {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 @media(max-width:490px) {
