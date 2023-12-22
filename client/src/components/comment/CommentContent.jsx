@@ -21,9 +21,9 @@ const CommentContent = (props) => {
             .post("/api/comment/edit", body)
             .then((res) => {
                 if (res.data.success) {
-                    alert("수정되었습니다.");;
+                    alert("수정되었습니다.");
                 } else {
-                    alert("댓글 수정 실패")
+                    alert("댓글 수정 실패");
                 }
                 return window.location.reload();
             })

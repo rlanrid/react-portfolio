@@ -19,7 +19,8 @@ router.post("/submit", async (req, res) => {
     }
 });
 
-router.post("/getComment", (req, res) => {
+router.post("/list", (req, res) => {
+
     Comment
         .find()
         .populate("author")
@@ -27,9 +28,7 @@ router.post("/getComment", (req, res) => {
         .limit(12)
         .exec()
         .then((commentInfo) => {
-            console.log(commentInfo);
-
-            return res.status(200).json({ success: true, commentList: commentInfo })
+            return res.status(200).json({ success: true, commentList: commentInfo });
         })
         .catch((err) => {
             console.log(err);

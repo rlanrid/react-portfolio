@@ -1,20 +1,36 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import CommentContent from './CommentContent';
+import { useSelector } from 'react-redux';
 
-const CommentList = () => {
+const CommentList = (props) => {
     const [commentList, setCommentList] = useState([]);
+    const user = useSelector((state) => state.user)
 
-    useEffect(() => {
+    const getCommentList = () => {
+
         axios
-            .post("/api/comment/getComment")
+            .post("/api/comment/list")
             .then((res) => {
                 if (res.data.success) {
-                    setCommentList([...res.data.commentList]);
-                    console.log(commentList)
+                    console.log(res);
+                    if (props.state === true) {
+                        const myComments = commentList.filter(comment => comment.author.uid === user.uid);
+                        setCommentList(myComments);
+                    } else {
+                        setCommentList([...res.data.commentList]);
+                    }
+
                 }
             })
-    }, [])
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
+    useEffect(() => {
+        getCommentList();
+    }, [user])
 
     return (
         <div className="comment__list">

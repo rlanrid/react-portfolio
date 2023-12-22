@@ -24,7 +24,6 @@ const App = () => {
     menubar();
 
     firebase.auth().onAuthStateChanged((userInfo) => {
-      console.log("userInfo : ", userInfo)
       if (userInfo !== null) {
         dispatch(loginUser(userInfo.multiFactor.user));
       } else {

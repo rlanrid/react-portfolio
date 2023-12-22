@@ -6,7 +6,37 @@
     position: sticky;
     left: 0;
     top: 80px;
-    z-index: 17;
+    z-index: 16;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment__filter svg {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+    color: var(--gainsboro);
+    cursor: pointer;
+    animation: float 2s ease-in-out infinite;
+}
+
+.comment__filter svg:hover {
+    animation-play-state: paused;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-2.5px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .comment__cont {
@@ -87,10 +117,6 @@
     transition: all 0.3s;
 }
 
-.comment__list .list:nth-child(4n) {
-    border-right: none;
-}
-
 .comment__list .list:hover {
     background-color: var(--gainsboro);
     color: var(--primary-color);
@@ -104,10 +130,6 @@
     left: 0;
     bottom: 0;
     background-color: var(--gainsboro);
-}
-
-.comment__list .list:nth-last-child(-n+4)::before {
-    display: none;
 }
 
 .list .co__title {
@@ -181,7 +203,7 @@
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .comment__list .list:nth-child(4n) {
+    /* .comment__list .list:nth-child(4n) {
         border-right: 1px solid var(--gainsboro);
     }
 
@@ -195,7 +217,7 @@
 
     .comment__list .list:nth-last-child(-n+3)::before {
         display: none;
-    }
+    } */
 }
 
 
@@ -220,22 +242,6 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .comment__list .list:nth-child(3n) {
-        border-right: 1px solid var(--gainsboro);
-    }
-
-    .comment__list .list:nth-child(2n) {
-        border-right: none;
-    }
-
-    .comment__list .list:nth-last-child(-n+3)::before {
-        display: block;
-    }
-
-    .comment__list .list:nth-last-child(-n+2)::before {
-        display: none;
-    }
-
 
 }
 
@@ -243,21 +249,5 @@
 @media(max-width: 400px) {
     .comment__list {
         grid-template-columns: repeat(1, 1fr);
-    }
-
-    .comment__list .list:nth-child(3n) {
-        border-right: none;
-    }
-
-    .comment__list .list {
-        border-right: none;
-    }
-
-    .comment__list .list:nth-last-child(-n+2)::before {
-        display: block;
-    }
-
-    .comment__list .list:last-child::before {
-        display: none;
     }
 }
