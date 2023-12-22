@@ -10,15 +10,15 @@ import About from '../components/section/About'
 import Stack from '../components/section/Stack'
 import Contact from '../components/section/Contact'
 import Comment from '../components/section/Comment'
-import Line from '../components/section/Line'
 
 import ArrowImg from '../assets/img/arrow.png'
 import { appear } from '../utils/apper'
 import { mouse } from '../utils/mouse'
-import Progress from '../components/section/Progress'
-import Canvas from '../components/section/Canvas'
-import UserJoin from '../components/user/UserJoin'
-import UserLogin from '../components/user/UserLogin'
+
+import Progress from '../components/contents/Progress'
+import Canvas from '../components/contents/Canvas'
+import Line from '../components/contents/Line'
+import Modal from '../components/section/Modal'
 
 const HomeView = () => {
     return (
@@ -35,10 +35,9 @@ const HomeView = () => {
                 <Stack arrowImg={ArrowImg} arrowAlt="화살표이미지" />
                 <Contact arrowImg={ArrowImg} arrowAlt="화살표이미지" />
                 <Comment arrowImg={ArrowImg} arrowAlt="화살표이미지" />
-                <UserJoin />
-                <UserLogin />
             </Main>
             <Footer />
+            <Modal />
             <Line />
         </>
     )

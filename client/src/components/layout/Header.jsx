@@ -40,7 +40,7 @@ const Header = () => {
                                     </li>
                                 ))}
                                 <li>
-                                    <Link onClick={(() => LogOutHandler())}>Sign Out</Link>
+                                    <Link onClick={(() => LogOutHandler())} className='nav__link'>Sign Out</Link>
                                 </li>
                             </ul>
                         )}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import firebase from '../../firebase.js'
 
-const UserLogin = () => {
+const UserLogin = (props) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMsg, setErrorMsg] = useState("");
@@ -23,8 +23,8 @@ const UserLogin = () => {
     return (
         <div className='login__wrap'>
             <div className="login__header">
-                <h2>Login</h2>
-                <p>로그인</p>
+                <h3>Login</h3>
+                <p className='user__desc' onClick={() => { props.handleTabChange('join') }}>회원가입</p>
             </div>
             <form className="login__form">
                 <fieldset>
@@ -57,10 +57,10 @@ const UserLogin = () => {
                             onChange={(e) => setPassword(e.currentTarget.value)}
                         />
                     </div>
-                    <div>
-                        {errorMsg !== "" && <p>{errorMsg}</p>}
+                    <div className='login__msg'>
+                        {errorMsg !== "" && <p className='user__msg'>{errorMsg}</p>}
                     </div>
-                    <button type="submit" onClick={(e) => LoginFunc(e)} className="btn__style2 mt30">로그인</button>
+                    <button type="submit" onClick={(e) => LoginFunc(e)} className="user__submit">로그인</button>
                 </fieldset>
             </form>
         </div>

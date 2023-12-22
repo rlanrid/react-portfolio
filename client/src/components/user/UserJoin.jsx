@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
 import axios from 'axios'
 import firebase from '../../firebase.js'
+import { FaRegCheckCircle } from "react-icons/fa";
 
-const UserJoin = () => {
+
+const UserJoin = (props) => {
     const [youName, setYouName] = useState("");
     const [youEmail, setYouEmail] = useState("");
     const [youPass, setYouPass] = useState("");
@@ -12,7 +13,6 @@ const UserJoin = () => {
     const [nameCheck, setNameCheck] = useState(false);
     const [nameInfo, setNameInfo] = useState("")
 
-    // let navigate = useNavigate();
 
     const JoinFunc = async (e) => {
         setFlag(true);
@@ -80,7 +80,7 @@ const UserJoin = () => {
         <div className='join__wrap'>
             <div className="join__header">
                 <h3>Join</h3>
-                <p>회원가입</p>
+                <p className='user__desc' onClick={() => { props.handleTabChange('login') }}>로그인</p>
             </div>
             <form className="join__form">
                 <fieldset>
@@ -101,8 +101,10 @@ const UserJoin = () => {
                         />
                     </div>
                     <div className="join__nameCheck">
-                        <p>{nameInfo}</p>
-                        <button onClick={(e) => NameCheckFunc(e)}>닉네임 중복검사</button>
+                        <p className='user__msg'>{nameInfo}</p>
+                        <button onClick={(e) => NameCheckFunc(e)}>
+                            <FaRegCheckCircle />
+                        </button>
                     </div>
                     <div className="join__email">
                         <label htmlFor="youEmail" className='required blind'>Email</label>
@@ -149,7 +151,7 @@ const UserJoin = () => {
                             onChange={(e) => setYouPassC(e.currentTarget.value)}
                         />
                     </div>
-                    <button disabled={flag} type='submit' className='btn__style' onClick={(e) => JoinFunc(e)}>회원가입</button>
+                    <button disabled={flag} type='submit' className='user__submit' onClick={(e) => JoinFunc(e)}>회원가입</button>
                 </fieldset>
             </form>
         </div >

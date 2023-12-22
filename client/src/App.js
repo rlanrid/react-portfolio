@@ -17,7 +17,7 @@ const App = () => {
 
   useEffect(() => {
     smooth();
-    // three();
+    three();
     gsapEffect();
     menu();
     link();
