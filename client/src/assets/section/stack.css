@@ -88,6 +88,19 @@
     transition: opacity 0.3s ease-in-out;
 }
 
+@media(max-width:1080px) {
+    .stack__item:nth-child(3n) .desc {
+        left: 0;
+        top: 30px;
+    }
+}
+
+@media(max-width:760px) {
+    .stack__desc .desc {
+        display: none;
+    }
+}
+
 
 @media(max-width:480px) {
     .stack__icon {

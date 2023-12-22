@@ -3,7 +3,7 @@ import UserJoin from './UserJoin'
 import UserLogin from './UserLogin'
 import { IoMdClose } from "react-icons/io";
 
-const UserArea = () => {
+const UserArea = (props) => {
     const [activeTab, setActiveTab] = useState('join');
 
     const handleTabChange = (tab) => {
@@ -12,9 +12,9 @@ const UserArea = () => {
 
     return (
         <div className='user__cont'>
-            <div className="modal__close">
+            <button className="modal__close" onClick={() => { props.toggleModal() }}>
                 <IoMdClose className='modal__icon' />
-            </div>
+            </button>
             {activeTab === 'join' ? <UserJoin handleTabChange={handleTabChange} /> : <UserLogin handleTabChange={handleTabChange} />}
         </div>
     )

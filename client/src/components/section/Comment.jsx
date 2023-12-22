@@ -13,7 +13,7 @@ const Comment = (props) => {
                     <div className="title__line"></div>
                 </div>
                 <div className="comment__cont">
-                    <CommentWrite />
+                    <CommentWrite toggleModal={props.toggleModal} />
                     <CommentList />
                 </div>
             </div>

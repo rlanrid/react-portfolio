@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 import firebase from '../../firebase.js'
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+const Header = (props) => {
     const user = useSelector(state => state.user);
 
     const LogOutHandler = () => {
@@ -31,6 +31,9 @@ const Header = () => {
                                         <a href={navItem.url} className="nav__link">{navItem.title}</a>
                                     </li>
                                 ))}
+                                <li>
+                                    <Link onClick={() => { props.toggleModal() }}>Sign up</Link>
+                                </li>
                             </ul>
                         ) : (
                             <ul>

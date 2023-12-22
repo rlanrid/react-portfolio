@@ -129,7 +129,6 @@ export function sliderAppar() {
     }
 
     const sliderTrackContents = sliderTrack1.innerHTML;
-    console.log(sliderTrackContents);
 
     const newSliderTrack = document.createElement('div');
     newSliderTrack.classList.add('slider__track');

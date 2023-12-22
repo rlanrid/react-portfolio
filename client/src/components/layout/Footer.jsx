@@ -20,7 +20,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className="footer__made">
-                    Crafted With Code
+                    Built With React
                 </div>
             </div>
         </footer>

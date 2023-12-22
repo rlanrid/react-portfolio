@@ -17,7 +17,7 @@
     border-radius: 50px;
     background-color: var(--white100);
     position: relative;
-    box-shadow: 0px 0px 50px var(--gainsboro);
+    box-shadow: 0px 0px 25px var(--gainsboro);
 }
 
 .user__cont h3 {
@@ -31,6 +31,7 @@
     position: absolute;
     right: 20px;
     top: 20px;
+    background-color: transparent;
 }
 
 .user__cont .modal__icon {
@@ -125,7 +126,12 @@
     font-weight: 300;
     font-family: var(--mainfont-gmarket);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.25s;
+}
+
+.user__submit:hover {
+    background-color: var(--primary-color);
+    color: var(--gainsboro);
 }
 
 .user__desc {
@@ -142,8 +148,22 @@
 }
 
 .user__msg {
-    font-size: 1rem;
+    font-size: 12px;
     color: var(--red);
+    text-align: center;
+    padding-left: 10px;
+}
+
+.user__msg.join__success {
+    color: var(--green);
+}
+
+.user__msg.join__fail {
+    color: var(--red);
+}
+
+.check__success {
+    color: var(--green);
 }
 
 @media(max-width:680px) {

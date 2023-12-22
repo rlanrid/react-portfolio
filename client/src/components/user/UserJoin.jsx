@@ -49,6 +49,7 @@ const UserJoin = (props) => {
             .then((res) => {
                 if (res.data.success) {
                     alert("회원가입이 완료되었습니다.");
+                    window.location.reload();
                 } else {
                     alert("회원가입 실패");
                 }
@@ -101,10 +102,19 @@ const UserJoin = (props) => {
                         />
                     </div>
                     <div className="join__nameCheck">
-                        <p className='user__msg'>{nameInfo}</p>
                         <button onClick={(e) => NameCheckFunc(e)}>
-                            <FaRegCheckCircle />
+                            {nameInfo === "사용 가능한 닉네임입니다." ? (
+                                <FaRegCheckCircle className='check__success' />
+                            ) : (
+                                <FaRegCheckCircle />
+                            )}
+
                         </button>
+                    </div>
+                    <div className={nameInfo ?
+                        (nameInfo === "사용 가능한 닉네임입니다." ? ('user__msg join__success') : ('user__msg join__fail'))
+                        : ("blind")}>
+                        {nameInfo}
                     </div>
                     <div className="join__email">
                         <label htmlFor="youEmail" className='required blind'>Email</label>

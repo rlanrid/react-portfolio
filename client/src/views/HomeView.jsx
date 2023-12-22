@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/layout/Header'
 import Main from '../components/layout/Main'
 import Footer from '../components/layout/Footer'
@@ -21,10 +21,16 @@ import Line from '../components/contents/Line'
 import Modal from '../components/section/Modal'
 
 const HomeView = () => {
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    }
+
     return (
         <>
             <Progress />
-            <Header />
+            <Header toggleModal={toggleModal} />
             <Canvas />
             <Main>
                 <Opening />
@@ -34,10 +40,10 @@ const HomeView = () => {
                 <About arrowImg={ArrowImg} arrowAlt="화살표이미지" />
                 <Stack arrowImg={ArrowImg} arrowAlt="화살표이미지" />
                 <Contact arrowImg={ArrowImg} arrowAlt="화살표이미지" />
-                <Comment arrowImg={ArrowImg} arrowAlt="화살표이미지" />
+                <Comment arrowImg={ArrowImg} arrowAlt="화살표이미지" toggleModal={toggleModal} />
             </Main>
             <Footer />
-            <Modal />
+            <Modal show={showModal} toggleModal={toggleModal} />
             <Line />
         </>
     )

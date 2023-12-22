@@ -16,6 +16,7 @@
     --black: #000;
     --white: #fff;
     --red: #f00;
+    --green: #80f36c;
 
     /* 슬라이드 폰트 */
     --font-js: "Metal Mania";
@@ -43,8 +44,6 @@
     --white300: #e1e0e0;
     --white400: #bebebe;
     --white500: #aaaaaa;
-
-    --blue100: #0071E3;
 
     font-size: 16px;
     line-height: 1.5;

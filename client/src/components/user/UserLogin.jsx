@@ -15,6 +15,7 @@ const UserLogin = (props) => {
         try {
             await firebase.auth().signInWithEmailAndPassword(email, password);
             alert("로그인을 했습니다.");
+            window.location.reload();
         } catch (err) {
             console.log(err);
             setErrorMsg("이메일과 비밀번호를 다시 한번 확인해주세요!");

@@ -8,7 +8,7 @@ const commentSchema = new mongoose.Schema(
             ref: "User",
         },
     },
-    { collection: "comments" }
+    { collection: "comments", timestamps: true }
 );
 
 const Comment = mongoose.model("Comment", commentSchema);

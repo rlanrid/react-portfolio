@@ -23,6 +23,8 @@ router.post("/getComment", (req, res) => {
     Comment
         .find()
         .populate("author")
+        .sort({ createdAt: -1 })
+        .limit(12)
         .exec()
         .then((commentInfo) => {
             console.log(commentInfo);
