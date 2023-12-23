@@ -8,7 +8,7 @@
 
 .about__left {
     width: 62.5%;
-    padding: 195px 12.5% 195px 0;
+    padding: 195px 0;
 }
 
 .about__right {
@@ -71,8 +71,8 @@
 
 .about__right figure {
     height: 100%;
-    filter: saturate(50%);
-    background-image: url(../img/about.jpg);
+    filter: saturate(80%) brightness(70%) grayscale(100%);
+    background-image: url(../img/icon1-min.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: scroll;
@@ -81,7 +81,7 @@
 }
 
 .about__right figure:hover {
-    filter: saturate(100%);
+    filter: saturate(15%) brightness(90%) grayscale(50%);
 }
 
 .about__right img {

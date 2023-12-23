@@ -15,7 +15,7 @@ const About = (props) => {
                 </div>
                 <div className="about__cont">
                     <div className="about__left">
-                        <div className="about__intro">
+                        <div className="about__intro gsap__about">
                             {/* <!-- Hello, I'm Woojoo, a frontend developer<br />
                                 passionate about crafting engaging digital<br />
                                     experiences. I specialize in translating ideas<br />
@@ -28,7 +28,7 @@ const About = (props) => {
                             만들 수 있는 기회를 찾고 있습니다.
 
                         </div>
-                        <div className="about__link">
+                        <div className="about__link gsap__about">
                             <Link to="/">
                                 <p>About me</p>
                                 <img src={ImgCol.RightArrowImg} alt="오른쪽화살표" />

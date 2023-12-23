@@ -49,7 +49,7 @@ export const PortInfo = [
 
 export const moreInfo = [
     {
-        title: "Movie Quiz Game Using JS",
+        title: "Quiz Game site",
         type: "Personal Project",
         stack: "HTML, JavaScript",
         link: "/",

@@ -32,6 +32,7 @@ const More = (props) => {
                                     <img src={item.src} alt={item.alt} className="more__img" />
                                 </div>
                             </div>
+                            <div className="more__line"></div>
                         </div>
                     ))}
                 </div>

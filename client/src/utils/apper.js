@@ -97,6 +97,45 @@ export function appear() {
         });
     });
 
+    // more
+    const moreItems = gsap.utils.toArray(".more__line");
+
+    moreItems.forEach((el) => {
+        el.classList.add("reveal__line");
+    })
+
+    gsap.utils.toArray(".reveal__line").forEach(item => {
+        hide(item);
+
+        ScrollTrigger.create({
+            trigger: item,
+            start: "top bottom",
+            end: "bottom top",
+            once: true,
+            duration: 5,
+            delay: 1,
+            onEnter: () => { animate2(item) }
+        })
+    })
+
+    // about
+    const aboutSection = document.querySelector("#about");
+    const aboutItems = document.querySelectorAll(".gsap__about");
+
+    aboutItems.forEach((item, index) => {
+        hide(item);
+
+        ScrollTrigger.create({
+            trigger: aboutSection,
+            start: "top center",
+            end: "bottom top",
+            once: true,
+            onEnter: () => {
+                animate3(item);
+            }
+        })
+    })
+
     // stack
     const stackIcons = document.querySelectorAll(".icon__img");
 
