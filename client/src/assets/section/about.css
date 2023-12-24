@@ -4,10 +4,11 @@
 
 .about__cont {
     display: flex;
+    justify-content: space-between;
 }
 
 .about__left {
-    width: 62.5%;
+    width: 50%;
     padding: 195px 0;
 }
 

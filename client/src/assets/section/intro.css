@@ -146,11 +146,16 @@
 @media(max-width:480px) {
     .intro__text {
         font-size: 2rem;
-        margin-bottom: 30px;
+        margin-bottom: 80px;
     }
 
     .intro__desc {
-        font-size: 0.7rem;
-        margin-bottom: 45px;
+        display: none;
+    }
+}
+
+@media(max-width:375px) {
+    .intro__text {
+        font-size: 1.8rem;
     }
 }

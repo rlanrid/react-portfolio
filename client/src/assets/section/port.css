@@ -93,6 +93,12 @@
     top: 240px;
 }
 
+@media(max-width:780px) {
+    .port__item.p2 figure>img {
+        object-position: 85% 50%;
+    }
+}
+
 @media(max-width:890px) {
     .port__cont .info2 .title {
         font-size: 24px;

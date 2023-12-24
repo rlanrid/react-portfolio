@@ -160,6 +160,23 @@
     transition: width 0.3s;
 }
 
+.nav__mobile__menu.close__nav span {
+    opacity: 1;
+    transform: rotate(45deg);
+}
+
+.nav__mobile__menu.close__nav span::before {
+    opacity: 1;
+    left: 0;
+    top: 0;
+    transform: rotate(90deg);
+}
+
+.nav__mobile__menu.close__nav span::after {
+    opacity: 1;
+    display: none;
+}
+
 .logged>strong {
     font-weight: 800;
     text-shadow: 0px 0px 10px var(--gainsboro);
@@ -168,29 +185,49 @@
 
 @media(max-width: 780px) {
     .nav {
-        display: none;
+        visibility: hidden;
+    }
+
+    .nav ul {
+        opacity: 0;
+        transition: opacity 0.3s;
     }
 
     .nav.show {
-        display: block;
+        visibility: visible;
     }
 
     .nav.show ul {
-        display: block;
         position: absolute;
-        height: auto;
-        right: 0;
+        left: 0;
+        width: 100%;
         top: 80px;
-        background-color: var(--primary-color);
+        background-color: rgba(7, 7, 7, 0.5);
+        backdrop-filter: blur(10px);
         z-index: 10;
         min-width: 120px;
-        padding: 10px 0;
+        padding: 0 20px;
+        height: 100vh;
+
+        opacity: 1;
     }
 
     .nav.show li {
         display: block;
-        text-align: right;
-        margin-right: 20px;
+        text-align: left;
+        margin-right: 0;
+        cursor: pointer;
+        border-bottom: 1px solid var(--gainsboro);
+    }
+
+    nav.show li a {
+        width: 100%;
+        display: inline-block;
+        padding: 20px 0;
+        font-family: var(--mainfont-gmarket);
+        font-size: 24px;
+        color: var(--gainsboro);
+        opacity: 1;
     }
 
     .nav__mobile__menu {

@@ -12,8 +12,8 @@ const Intro = (props) => {
             <div className="intro__wrap containerH">
                 <div className="intro__text gsap__intro" data-delay="0">
                     Creating user-centric<br />
-                    development with a focus<br />
-                    on usability.
+                    development with a<br />
+                    focus on usability.
                 </div>
                 <div className="intro__desc gsap__intro" data-delay="0.1">
                     '배움에는 끝이 없다' 라는 말이 있듯이 공부도 100% 라는 완벽한 수치는 없다고 생각합니다.<br />
@@ -56,38 +56,6 @@ const Intro = (props) => {
                                 <div className="text tPhp">PHP</div>
                             </div>
                         </div>
-                        {/* <div className="slider__track" id="sliderTrack2">
-                            <div className="slider">
-                                <div className="text tHtml">HTML</div>
-                            </div>
-                            <div className="slider">
-                                <div className="text tCss">CSS3</div>
-                            </div>
-                            <div className="slider">
-                                <div className="text tMongo">mongoDB</div>
-                            </div>
-                            <div className="slider">
-                                <div className="text tJs">JavaScript</div>
-                            </div>
-                            <div className="slider">
-                                <div className="text tReact">React</div>
-                            </div>
-                            <div className="slider">
-                                <div className="text tSass">Sass</div>
-                            </div>
-                            <div className="slider ">
-                                <div className="text tJson">Json</div>
-                            </div>
-                            <div className="slider">
-                                <div className="text tNode">Node.js</div>
-                            </div>
-                            <div className="slider">
-                                <div className="text tJquery">Jquery</div>
-                            </div>
-                            <div className="slider">
-                                <div className="text tPhp">PHP</div>
-                            </div>
-                        </div> */}
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@ export function appear() {
     const animate2 = (item) => {
         gsap.fromTo(item,
             { autoAlpha: 0, width: 0 },
-            { autoAlpha: 1, width: 100 + "%" }
+            { autoAlpha: 1, width: 100 + "%", duration: 1.5 }
         )
     }
 
