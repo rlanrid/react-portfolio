@@ -59,7 +59,7 @@ const UserLogin = (props) => {
                         />
                     </div>
                     <div className='login__msg'>
-                        {errorMsg !== "" && <p className='user__msg'>{errorMsg}</p>}
+                        {errorMsg !== "" && <p className='err__msg'>{errorMsg}</p>}
                     </div>
                     <button type="submit" onClick={(e) => LoginFunc(e)} className="user__submit">로그인</button>
                 </fieldset>

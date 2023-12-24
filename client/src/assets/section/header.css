@@ -163,6 +163,7 @@
 .logged>strong {
     font-weight: 800;
     text-shadow: 0px 0px 10px var(--gainsboro);
+    font-family: var(--mainfont-chosun);
 }
 
 @media(max-width: 780px) {

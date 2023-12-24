@@ -18,14 +18,14 @@ const More = (props) => {
                 </div>
                 <div className="more__cont">
                     {moreInfo.map((item, key) => (
-                        <div className={`more__item num${key + 1}`} key={key}>
+                        <Link to={item.link} className={`more__item num${key + 1}`} key={key}>
                             <div className="title">{item.title}</div>
                             <div className="type">{item.type}</div>
                             <div className="stack">{item.stack}</div>
                             <div className="link">
-                                <Link to={item.link}>
+                                <div className="linkImg__wrap">
                                     <img src={ImgCol.SmallLinkImg} alt="작은링크화살표" />
-                                </Link>
+                                </div>
                             </div>
                             <div className="more__img__wrap">
                                 <div className="more__img__inner">
@@ -33,7 +33,7 @@ const More = (props) => {
                                 </div>
                             </div>
                             <div className="more__line"></div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

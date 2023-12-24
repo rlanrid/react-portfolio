@@ -162,6 +162,13 @@
     color: var(--red);
 }
 
+.err__msg {
+    font-size: 12px;
+    color: var(--red);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 .check__success {
     color: var(--green);
 }

@@ -95,7 +95,6 @@
 
 .comment__list {
     width: 100%;
-    min-height: 600px;
     background-color: var(--primary-color);
     border-left: 1px solid var(--gainsboro);
     border-top: none;

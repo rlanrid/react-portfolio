@@ -61,14 +61,6 @@
     object-position: 50% 50%;
 }
 
-.port__cont .link {
-    cursor: pointer;
-}
-
-.port__cont .link a {
-    display: flex;
-    align-items: center;
-}
 
 .port__item {
     border-radius: 15px;

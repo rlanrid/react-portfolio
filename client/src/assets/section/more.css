@@ -64,13 +64,13 @@
     width: 12.5%;
 }
 
-.more__item .link a {
+.more__item .link .linkImg__wrap {
     display: flex;
     align-items: center;
     justify-content: right;
 }
 
-.more__item .link a img {
+.more__item .link img {
     width: 14px;
 }
 
