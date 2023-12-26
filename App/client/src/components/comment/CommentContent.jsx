@@ -80,16 +80,24 @@ const CommentContent = (props) => {
                             ) : ("- user")}
                         </div>
                     </div>
-                    {props.comment.author.uid === user.uid && (
-                        <div className="co__edit">
-                            <p className='co__modify' onClick={() => {
-                                setEditFlag(true);
-                            }}><MdEdit /></p>
-                            <p className='co__delete' onClick={(e) => DeleteHandler(e)}>
-                                <MdDelete />
-                            </p>
-                        </div>
+                    {props.comment.author ? (
+                        <>
+                            {props.comment.author.uid === user.uid && (
+                                <div className="co__edit">
+                                    <p className='co__modify' onClick={() => {
+                                        setEditFlag(true);
+                                    }}><MdEdit /></p>
+                                    <p className='co__delete' onClick={(e) => DeleteHandler(e)}>
+                                        <MdDelete />
+                                    </p>
+                                </div>
+                            )}
+                        </>
+
+                    ) : (
+                        <></>
                     )}
+
                 </>
 
             )}
