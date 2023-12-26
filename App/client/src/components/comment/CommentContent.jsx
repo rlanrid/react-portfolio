@@ -75,7 +75,7 @@ const CommentContent = (props) => {
                     <div className="co__info">
                         <p className='co__title'>{props.comment.comment}</p>
                         <div className="co__author">
-                            {props.comment.author.displayName ? (
+                            {props.comment.author ? (
                                 <p> - {props.comment.author.displayName}</p>
                             ) : ("- user")}
                         </div>
