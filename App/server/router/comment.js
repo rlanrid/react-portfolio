@@ -8,11 +8,19 @@ router.post("/submit", async (req, res) => {
     let temp = req.body;
     try {
         const userInfo = await User.findOne({ uid: req.body.uid }).exec();
-        temp.author = userInfo._id;
-        const NewComment = new Comment(temp);
-        await NewComment.save();
 
-        return res.status(200).json({ success: true });
+        if (userInfo) {
+            temp.author = userInfo._id;
+            const NewComment = new Comment(temp);
+            await NewComment.save();
+
+            return res.status(200).json({ success: true });
+        } else {
+            const NewComment = new Comment(temp);
+            await NewComment.save();
+            return res.status(200).json({ success: true })
+        }
+
     } catch (err) {
         console.log(err);
         return res.status(400).json({ success: false });
