@@ -88,7 +88,7 @@
     z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .open__text {
@@ -162,6 +162,10 @@
 }
 
 .mini__text {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     font-family: var(--font-antonio);
@@ -193,7 +197,8 @@
     }
 
     .text__gif {
-        width: 35vw;
+        width: 30vw;
+        height: 80px;
     }
 
     .text__gif.g1,

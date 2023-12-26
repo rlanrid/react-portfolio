@@ -185,16 +185,11 @@
 
 @media(max-width: 780px) {
     .nav {
-        visibility: hidden;
-    }
-
-    .nav ul {
-        opacity: 0;
-        transition: opacity 0.3s;
+        display: none;
     }
 
     .nav.show {
-        visibility: visible;
+        display: block;
     }
 
     .nav.show ul {
@@ -208,8 +203,6 @@
         min-width: 120px;
         padding: 0 20px;
         height: 100vh;
-
-        opacity: 1;
     }
 
     .nav.show li {

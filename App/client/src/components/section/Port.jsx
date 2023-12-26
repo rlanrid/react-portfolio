@@ -19,7 +19,7 @@ const Port = (props) => {
                                 <div className="date">{item.date}</div>
                                 <div className="skill">{item.skill}</div>
                             </div>
-                            <Link to={item.link} className="info2">
+                            <Link to={item.link} target='_blank' className="info2">
                                 <div className="title">{item.title}</div>
                                 <div className="link">
                                     <img src={item.linkImg} alt={item.linkAlt} />

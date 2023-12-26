@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import axios from 'axios'
 
-const CommentWrite = (props) => {
+const CommentWrite = () => {
     const [comment, setComment] = useState("");
     const [isOverLimit, setIsOverLimit] = useState(false);
 
@@ -11,10 +11,10 @@ const CommentWrite = (props) => {
     const SubmitHandler = (e) => {
         e.preventDefault();
 
-        if (user.accessToken === "") {
-            alert("로그인을 해주세요.");
-            return props.toggleModal();
-        }
+        // if (user.accessToken === "") {
+        //     alert("로그인을 해주세요.");
+        //     return props.toggleModal();
+        // }
 
         if (!comment) {
             return alert("댓글을 작성해주세요.");

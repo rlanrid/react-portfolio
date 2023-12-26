@@ -129,6 +129,9 @@
     overflow-x: hidden;
     font-size: 14px;
     font-family: var(--mainfont-gmarket);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .list .co__title {

@@ -75,7 +75,9 @@ const CommentContent = (props) => {
                     <div className="co__info">
                         <p className='co__title'>{props.comment.comment}</p>
                         <div className="co__author">
-                            - {props.comment.author.displayName}
+                            {props.comment.author.displayName ? (
+                                <p> - {props.comment.author.displayName}</p>
+                            ) : ("- user")}
                         </div>
                     </div>
                     {props.comment.author.uid === user.uid && (

@@ -7,39 +7,39 @@ const CommentList = (props) => {
     const [commentList, setCommentList] = useState([]);
     const user = useSelector((state) => state.user);
 
-    const getCommentList = () => {
-        axios
-            .post("/api/comment/list")
-            .then((res) => {
-                if (res.data.success) {
-                    console.log(res);
-                    setCommentList([...res.data.commentList]);
-                }
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
-
-    const getMyList = () => {
-        let body = {
-            uid: user.uid,
+    useEffect(() => {
+        const getCommentList = () => {
+            axios
+                .post("/api/comment/list")
+                .then((res) => {
+                    if (res.data.success) {
+                        console.log(res);
+                        setCommentList([...res.data.commentList]);
+                    }
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
         }
 
-        axios
-            .post("/api/comment/filter", body)
-            .then((res) => {
-                if (res.data.success) {
-                    console.log(res);
-                    setCommentList([...res.data.commentList]);
-                }
-            })
-            .catch((err) => {
-                console.log(err)
-            })
-    }
+        const getMyList = () => {
+            let body = {
+                uid: user.uid,
+            }
 
-    useEffect(() => {
+            axios
+                .post("/api/comment/filter", body)
+                .then((res) => {
+                    if (res.data.success) {
+                        console.log(res);
+                        setCommentList([...res.data.commentList]);
+                    }
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+        }
+
         if (user.accessToken) {
             if (props.state === true) {
                 getMyList();

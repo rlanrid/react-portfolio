@@ -30,13 +30,13 @@ const Opening = () => {
                         <div className="text__gif g3"></div>
                     </div>
                 </div>
-                <div className="mini__text">
-                    <div className="birth">&#123;2004&#125;</div>
-                    <div className="advantage1">&#123;PASSIONATE&#125;</div>
-                    <div className="advantage2">&#123;AVAILABLE&#125;</div>
-                    <div className="advantage3">&#123;DELIGHT&#125;</div>
-                    <div className="year">&#123;2024&#125;</div>
-                </div>
+            </div>
+            <div className="mini__text containerH">
+                <div className="birth">&#123;2004&#125;</div>
+                <div className="advantage1">&#123;PASSIONATE&#125;</div>
+                <div className="advantage2">&#123;AVAILABLE&#125;</div>
+                <div className="advantage3">&#123;DELIGHT&#125;</div>
+                <div className="year">&#123;2024&#125;</div>
             </div>
         </section>
     )

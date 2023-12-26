@@ -18,7 +18,7 @@ const More = (props) => {
                 </div>
                 <div className="more__cont">
                     {moreInfo.map((item, key) => (
-                        <Link to={item.link} className={`more__item num${key + 1}`} key={key}>
+                        <Link to={item.link} target='_blank' className={`more__item num${key + 1}`} key={key}>
                             <div className="title">{item.title}</div>
                             <div className="type">{item.type}</div>
                             <div className="stack">{item.stack}</div>

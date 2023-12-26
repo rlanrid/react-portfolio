@@ -8,7 +8,6 @@ import HomeView from './views/HomeView'
 import { link } from './utils/link'
 import { menubar } from './utils/menubar'
 import { menu } from './utils/menu'
-import { three } from './utils/threeEffect'
 import { gsapEffect } from './utils/gsapEffect'
 import { smooth } from './utils/smooth'
 
@@ -17,7 +16,6 @@ const App = () => {
 
   useEffect(() => {
     smooth();
-    // three();
     gsapEffect();
     menu();
     link();
