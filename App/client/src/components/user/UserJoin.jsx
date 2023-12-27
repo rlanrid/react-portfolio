@@ -134,7 +134,7 @@ const UserJoin = (props) => {
                     <div className='join__password'>
                         <label htmlFor="youPass" className="required blind">비밀번호</label>
                         <input
-                            type="text"
+                            type="password"
                             id="youPass"
                             name="youPass"
                             placeholder="비밀번호"
@@ -149,7 +149,7 @@ const UserJoin = (props) => {
                     <div className='join__passwordC'>
                         <label htmlFor="youPassC" className="required blind">확인 비밀번호</label>
                         <input
-                            type="text"
+                            type="password"
                             id="youPassC"
                             name="youPassC"
                             placeholder="확인 비밀번호"

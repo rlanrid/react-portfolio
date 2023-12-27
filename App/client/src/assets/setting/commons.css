@@ -130,11 +130,6 @@ canvas {
 }
 
 
-.split {
-    opacity: 0;
-    visibility: hidden;
-}
-
 .input__style {
     width: 100%;
     text-align: center;

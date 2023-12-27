@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { sliderAppar } from '../../utils/apper';
+import { sliderAppear } from '../../utils/apper';
 
 const Intro = (props) => {
     useEffect(() => {
         props.appear();
-        sliderAppar();
+        sliderAppear();
     }, [props])
     return (
         <section id="intro">

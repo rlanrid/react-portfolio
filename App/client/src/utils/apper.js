@@ -159,7 +159,7 @@ export function appear() {
     });
 }
 
-export function sliderAppar() {
+export function sliderAppear() {
     // intro - sliderTrack 만들기
     const sliderTrack1 = document.querySelector('#sliderTrack1');
     if (!sliderTrack1) {

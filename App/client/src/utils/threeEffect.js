@@ -1,116 +1,118 @@
+// import * as THREE from 'https://cdn.skypack.dev/three@v0.122.0';
+// import { SimplexNoise } from "three/examples/jsm/math/SimplexNoise"
+
 export function three() {
-    const rand = function (min, max) {
-        return Math.random() * (max - min) + min;
-    }
+    // let scene, camera, renderer, ribbon
+    // const container = document.querySelector('#opening')
+    // const init = () => {
+    //     scene = new THREE.Scene()
+    //     camera = new THREE.PerspectiveCamera(75, 1, 0.1, 10000)
+    //     camera.position.z = 2
+    //     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+    //     container.appendChild(renderer.domElement)
 
-    let canvas = document.getElementById('canvas');
-    let ctx = canvas.getContext('2d');
+    //     ribbon = new THREE.Mesh(
+    //         new THREE.PlaneGeometry(1, 1, 128, 128),
+    //         new THREE.ShaderMaterial({
+    //             uniforms: { time: { value: 1.0 }, },
+    //             vertexShader: `
+    //                 varying vec3 vEC;
+    //                 uniform float time;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    //                 float iqhash(float n) {
+    //                     return fract(sin(n) * 43758.5453);
+    //                 }
 
-    window.addEventListener('resize', function () {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        ctx = canvas.getContext('2d');
-        ctx.globalCompositeOperation = 'lighter';
-    });
-    let backgroundColors = ['#000', '#000'];
-    let colors = [
-        ['#000', "#070707"],
-        ['#272727', '#070707'],
-        ['#070707', '#000']
-    ];
-    let count = 70;
-    let blur = [12, 70];
-    let radius = [1, 120];
+    //                 float noise(vec3 x) {
+    //                     vec3 p = floor(x);
+    //                     vec3 f = fract(x);
+    //                     f = f * f * (3.0 - 2.0 * f);
+    //                     float n = p.x + p.y * 57.0 + 113.0 * p.z;
+    //                     return mix(mix(mix(iqhash(n), iqhash(n + 1.0), f.x),
+    //                             mix(iqhash(n + 57.0), iqhash(n + 58.0), f.x), f.y),
+    //                             mix(mix(iqhash(n + 113.0), iqhash(n + 114.0), f.x),
+    //                             mix(iqhash(n + 170.0), iqhash(n + 171.0), f.x), f.y), f.z);
+    //                 }
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.globalCompositeOperation = 'lighter';
+    //                 float xmb_noise2(vec3 x) {
+    //                     return cos(x.z * 4.0) * cos(x.z + time / 10.0 + x.x);
+    //                 }
 
-    let grd = ctx.createLinearGradient(0, canvas.height, canvas.width, 0);
-    grd.addColorStop(0, backgroundColors[0]);
-    grd.addColorStop(1, backgroundColors[1]);
-    ctx.fillStyle = grd;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    //                 void main() {
+    //                 vec4 pos = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    //                 vec3 v = vec3(pos.x, 0.0, pos.y);
+    //                 vec3 v2 = v;
+    //                 vec3 v3 = v;
 
-    let items = [];
+    //                 v.y = xmb_noise2(v2) / 8.0;
 
-    while (count--) {
-        let thisRadius = rand(radius[0], radius[1]);
-        let thisBlur = rand(blur[0], blur[1]);
-        let x = rand(-100, canvas.width + 100);
-        let y = rand(-100, canvas.height + 100);
-        let colorIndex = Math.floor(rand(0, 299) / 100);
-        let colorOne = colors[colorIndex][0];
-        let colorTwo = colors[colorIndex][1];
+    //                 v3.x -= time / 5.0;
+    //                 v3.x /= 4.0;
 
-        ctx.beginPath();
-        ctx.filter = `blur(${thisBlur}px)`;
-        let grd = ctx.createLinearGradient(x - thisRadius / 2, y - thisRadius / 2, x + thisRadius, y + thisRadius);
+    //                 v3.z -= time / 10.0;
+    //                 v3.y -= time / 100.0;
 
-        grd.addColorStop(0, colorOne);
-        grd.addColorStop(1, colorTwo);
-        ctx.fillStyle = grd;
-        ctx.fill();
-        ctx.arc(x, y, thisRadius, 0, Math.PI * 2);
-        ctx.closePath();
+    //                 v.z -= noise(v3 * 7.0) / 15.0;
+    //                 v.y -= noise(v3 * 7.0) / 15.0 + cos(v.x * 2.0 - time / 2.0) / 5.0 - 0.3;
 
-        let directionX = Math.round(rand(-99, 99) / 100);
-        let directionY = Math.round(rand(-99, 99) / 100);
+    //                 vEC = v;
+    //                 gl_Position = vec4(v, 1.0);
+    //                 }
+    //             `,
+    //             fragmentShader: `
+    //                 uniform float time;
+    //                 varying vec3 vEC;
 
-        items.push({
-            x: x,
-            y: y,
-            blur: thisBlur,
-            radius: thisRadius,
-            initialXDirection: directionX,
-            initialYDirection: directionY,
-            initialBlurDirection: directionX,
-            colorOne: colorOne,
-            colorTwo: colorTwo,
-            gradient: [x - thisRadius / 2, y - thisRadius / 2, x + thisRadius, y + thisRadius],
-        });
-    }
+    //                 void main()
+    //                 {
+    //                 const vec3 up = vec3(0.0, 0.0, 1.0);
+    //                 vec3 x = dFdx(vEC);
+    //                 vec3 y = dFdy(vEC);
+    //                 vec3 normal = normalize(cross(x, y));
+    //                 float c = 1.0 - dot(normal, up);
+    //                 c = (1.0 - cos(c * c)) / 3.0;
+    //                 gl_FragColor = vec4(1.0, 1.0, 1.0, c * 1.5);
+    //                 }
+    //             `,
+    //             extensions: {
+    //                 derivatives: true,
+    //                 fragDepth: false,
+    //                 drawBuffers: false,
+    //                 shaderTextureLOD: false
+    //             },
+    //             side: THREE.DoubleSide,
+    //             transparent: true,
+    //             depthTest: false,
+    //         })
+    //     )
+    //     scene.add(ribbon)
 
-    function changeCanvas(timestamp) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        let adjX = 2;
-        let adjY = 2;
-        let adjBlur = 1;
-        items.forEach(function (item) {
+    //     resize()
+    //     window.addEventListener('resize', resize)
+    // }
 
-            if ((item.x + (item.initialXDirection * adjX) >= canvas.width && item.initialXDirection !== 0) ||
-                (item.x + (item.initialXDirection * adjX) <= 0 && item.initialXDirection !== 0)) {
-                item.initialXDirection = item.initialXDirection * -1;
-            }
-            if ((item.y + (item.initialYDirection * adjY) >= canvas.height && item.initialYDirection !== 0) ||
-                (item.y + (item.initialYDirection * adjY) <= 0 && item.initialYDirection !== 0)) {
-                item.initialYDirection = item.initialYDirection * -1;
-            }
-            if ((item.blur + (item.initialBlurDirection * adjBlur) >= radius[1] && item.initialBlurDirection !== 0) ||
-                (item.blur + (item.initialBlurDirection * adjBlur) <= radius[0] && item.initialBlurDirection !== 0)) {
-                item.initialBlurDirection *= -1;
-            }
 
-            item.x += (item.initialXDirection * adjX);
-            item.y += (item.initialYDirection * adjY);
-            item.blur += (item.initialBlurDirection * adjBlur);
-            ctx.beginPath();
-            ctx.filter = `blur(${item.blur}px)`;
-            let grd = ctx.createLinearGradient(item.gradient[0], item.gradient[1], item.gradient[2], item
-                .gradient[3]);
-            grd.addColorStop(0, item.colorOne);
-            grd.addColorStop(1, item.colorTwo);
-            ctx.fillStyle = grd;
-            ctx.arc(item.x, item.y, item.radius, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.closePath();
+    // const resize = () => {
+    //     const {
+    //         offsetWidth,
+    //         offsetHeight
+    //     } = container
 
-        });
-        window.requestAnimationFrame(changeCanvas);
+    //     renderer.setSize(offsetWidth, offsetHeight)
+    //     renderer.setPixelRatio(devicePixelRatio)
 
-    }
+    //     camera.aspect = offsetWidth / offsetHeight
+    //     camera.updateProjectionMatrix()
 
-    window.requestAnimationFrame(changeCanvas);
+    //     ribbon.scale.set(camera.aspect * 1.55, 0.75, 1)
+    // }
+
+    // const animate = () => {
+    //     ribbon.material.uniforms.time.value += 0.01
+    //     renderer.render(scene, camera)
+    //     requestAnimationFrame(() => animate())
+    // }
+
+    // init()
+    // animate()
 }
