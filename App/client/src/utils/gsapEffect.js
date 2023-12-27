@@ -8,13 +8,15 @@ export function gsapEffect() {
     // 여러개 이질감 표현하기
     gsap.utils.toArray(".text__gif").forEach(item => {
         gsap.to(item, {
+            yPercent: -50,
             ease: "none",
             duration: 0.5,
             scrollTrigger: {
                 trigger: item,
-                start: "center center",
+                start: "bottom center",
                 end: "bottom top",
-                scrub: 0.5
+                scrub: 0.5,
+                markers: true
             }
         })
     });
