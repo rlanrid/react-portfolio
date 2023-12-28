@@ -81,6 +81,15 @@ React와 함께 주로 사용되지만, React에 국한되지 않고 다른 Java
 ## 트러블슈팅
 
 <details>
+    <summar>failed to push some refs to 오류</summar>
+    - 문제 원인
+    이는 원격저장소에 내 로컬에는 없는 파일이 있을 때 내 파일을 push하려고하면 발생하는 오류이다.
+
+    - 문제 해결
+    먼저 원격저장소에서 pull한 뒤, 다시 내가 작업한 것을 push하면 된다.
+</details>
+<br/>
+<details>
     <summary>로그인/회원가입</summary>
     <p>
         기능을 구현하는것은 크게 문제되는 점이 없었지만 배포 후 회원가입이 되지않아서 몇 시간동안 고생했습니다.<br/>
