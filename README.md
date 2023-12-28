@@ -44,6 +44,8 @@ Node.js는 Chrome V8 JavaScript 엔진으로 빌드된 JavaScript 런타임 환�
 Node.js는 서버 측 애플리케이션을 구축하기 위한 환경을 제공하며, JavaScript를 사용하여 서버 사이드 코드를 작성할 수 있도록 해줍니다.
 
 ## 트러블슈팅
+<details><summary>Toggle me!</summary>Peek a boo!</details>
+
 - heroku 배포 문제
 모든 작업을 마친 후 heroku에 배포를 했습니다.
 heroku 배포 단계를 제대로 따라했는데 좀처럼 되지 않아서 애를 먹었지만,
