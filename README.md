@@ -39,8 +39,8 @@ Node.js는 Chrome V8 JavaScript 엔진으로 빌드된 JavaScript 런타임 환�
 Node.js는 서버 측 애플리케이션을 구축하기 위한 환경을 제공하며, JavaScript를 사용하여 서버 사이드 코드를 작성할 수 있도록 해줍니다.
 
 # 사이트
-[mongoDB](https://www.mongodb.com/ko-kr/cloud/atlas/lp/try4)
-[firebase](https://firebase.google.com/?hl=ko)
-[내도메인](https://xn--220b31d95hq8o.xn--3e0b707e/)
-[heroku](www.heroku.com)
+데이터베이스 - [mongoDB](https://www.mongodb.com/ko-kr/cloud/atlas/lp/try4)   
+로그인/회원가입 - [firebase](https://firebase.google.com/?hl=ko)   
+도메인 - [내도메인](https://xn--220b31d95hq8o.xn--3e0b707e/)   
+배포 - [heroku](www.heroku.com)
 
