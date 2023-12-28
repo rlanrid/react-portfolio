@@ -38,6 +38,8 @@ React로 포트폴리오 사이트를 제작하였습니다.
 Node.js는 Chrome V8 JavaScript 엔진으로 빌드된 JavaScript 런타임 환경입니다.   
 Node.js는 서버 측 애플리케이션을 구축하기 위한 환경을 제공하며, JavaScript를 사용하여 서버 사이드 코드를 작성할 수 있도록 해줍니다.
 
+# 트러블슈팅
+
 # 사이트
 데이터베이스 - [mongoDB](https://www.mongodb.com/ko-kr/cloud/atlas/lp/try4)   
 로그인/회원가입 - [firebase](https://firebase.google.com/?hl=ko)   
