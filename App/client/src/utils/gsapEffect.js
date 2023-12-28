@@ -16,7 +16,6 @@ export function gsapEffect() {
                 start: "bottom center",
                 end: "bottom top",
                 scrub: 0.5,
-                markers: true
             }
         })
     });

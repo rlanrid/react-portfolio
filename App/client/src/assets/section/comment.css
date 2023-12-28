@@ -60,7 +60,8 @@
     display: block;
     resize: none;
     padding: 15px;
-    font-family: var(--mainfont-abel);
+    font-family: var(--mainfont-chosun);
+    font-weight: 300;
 }
 
 .comment__form input:focus {
@@ -84,7 +85,9 @@
     background-color: transparent;
     color: var(--gainsboro);
     border: 1px solid var(--gainsboro);
+    font-family: var(--mainfont-abel);
     cursor: pointer;
+    font-weight: 300;
     transition: all 0.3s;
 }
 
