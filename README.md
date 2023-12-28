@@ -1,5 +1,10 @@
 # Portfolio
-React로 포트폴리오 사이트를 제작하였습니다.
+프론트엔드 신입 개발자 김우주의 포트폴리오 입니다.
+
+React를 이용해 만든 포트폴리오입니다. UI/UX는 [awwwards](https://www.awwwards.com/)를 참고하였습니다.
+반응형웹으로 만들어져 모든 환경에서 사용가능합니다.
+
+[사이트바로가기](http://woojoo-portfolio.kro.kr)
 
 ## 작업순서
 1. 리액트 설치 및 필요한 라이브러리 설치
