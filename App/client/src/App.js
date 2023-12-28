@@ -15,7 +15,6 @@ const App = () => {
 
   useEffect(() => {
     smooth();
-
     menubar();
     menu();
     link();
