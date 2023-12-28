@@ -80,17 +80,7 @@ React와 함께 주로 사용되지만, React에 국한되지 않고 다른 Java
 
 ## 트러블슈팅
 <details>
-<summary>heroku 배포 문제</summary>
-heroku 배포 단계를 제대로 따라했는데 좀처럼 되지 않아서 애를 먹었지만,<br/>
-`heroku logs --tail` 명령어를 사용하여 하나씩 에러를 수정해나갔습니다.<br/>
-결국 대부분의 오류는 경로설정 문제였습니다.<br/>
-</details>
-
-
-
-
-<details>
-    <summar>failed to push some refs to 오류</summar>
+    <summary>failed to push some refs to 오류</summary>
     - 문제 원인
     이는 원격저장소에 내 로컬에는 없는 파일이 있을 때 내 파일을 push하려고하면 발생하는 오류이다.
 
