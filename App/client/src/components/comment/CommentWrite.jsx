@@ -34,7 +34,6 @@ const CommentWrite = () => {
             .then((res) => {
                 if (res.data.success) {
                     alert("댓글 작성이 성공하였습니다.");
-                    window.location.reload();
                 } else {
                     alert("댓글 작성이 실패했습니다.")
                 }

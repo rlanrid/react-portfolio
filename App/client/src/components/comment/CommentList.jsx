@@ -49,7 +49,7 @@ const CommentList = (props) => {
         } else {
             getCommentList();
         }
-    }, [user, props.state])
+    }, [user, props.state, commentList])
 
     return (
         <div className="comment__list">
