@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../components/layout/Header'
 import Main from '../components/layout/Main'
 import Footer from '../components/layout/Footer'
@@ -16,22 +16,34 @@ import { appear } from '../utils/apper'
 import { mouse } from '../utils/mouse'
 
 import Progress from '../components/contents/Progress'
-import Canvas from '../components/contents/Canvas'
 import Line from '../components/contents/Line'
 import Modal from '../components/section/Modal'
+import Loading from '../components/contents/Loading'
+import { gsapEffect } from '../utils/gsapEffect'
 
 const HomeView = () => {
     const [showModal, setShowModal] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     const toggleModal = () => {
         setShowModal(!showModal);
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+            gsapEffect();
+        }, 3000)
+    }, []);
+
+    if (loading) {
+        return <Loading />
     }
 
     return (
         <>
             <Progress />
             <Header toggleModal={toggleModal} />
-            <Canvas />
             <Main>
                 <Opening />
                 <Intro appear={appear} />

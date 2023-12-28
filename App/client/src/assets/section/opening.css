@@ -111,7 +111,7 @@
 }
 
 .open__text .oText.t1 {
-    margin-left: -9px;
+    margin-left: -4px;
     position: relative;
 }
 
@@ -177,6 +177,14 @@
     font-size: 14px;
     line-height: 0.95;
     margin-bottom: 0.7vw;
+}
+
+.split {
+    opacity: 0;
+}
+
+.split span {
+    opacity: 0;
 }
 
 @media(max-width:1280px) {

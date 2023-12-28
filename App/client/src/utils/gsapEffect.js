@@ -25,6 +25,7 @@ export function gsapEffect() {
         let splitWrap = text.innerText.split("").join("</span><span aria-hidden='true'>");
         text.innerHTML = "<span aria-hidden='true'>" + splitWrap + "</span>";
         text.setAttribute("aria-label", text.innerText);
+        text.style.opacity = "1";
     })
 
     gsap.fromTo('.split span', {
@@ -37,6 +38,7 @@ export function gsapEffect() {
             y: 0,
             opacity: 1,
             duration: 1.5,
+            delay: 0.5,
             ease: 'power1.out',
             stagger: {
                 from: 'random',
@@ -49,7 +51,7 @@ export function gsapEffect() {
         .set("#opening .text__gif.g2", { xPercent: -20, opacity: 0 })
         .set("#opening .text__gif.g3", { yPercent: 20, opacity: 0 })
         .set("#opening .t__etc", { xPercent: 20, opacity: 0 })
-        .to("#opening .text__gif.g1", { xPercent: 0, opacity: 1, duration: 0.5, delay: 1.5 }) // 목표값 설정
+        .to("#opening .text__gif.g1", { xPercent: 0, opacity: 1, duration: 0.5, delay: 2 }) // 목표값 설정
         .to("#opening .text__gif.g2", { xPercent: 0, opacity: 1, duration: 0.5 })
         .to("#opening .text__gif.g3", { yPercent: 0, opacity: 1, duration: 0.5 })
         .to("#opening .t__etc", { xPercent: 0, opacity: 1, duration: 0.5 });

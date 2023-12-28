@@ -8,7 +8,6 @@ import HomeView from './views/HomeView'
 import { link } from './utils/link'
 import { menubar } from './utils/menubar'
 import { menu } from './utils/menu'
-import { gsapEffect } from './utils/gsapEffect'
 import { smooth } from './utils/smooth'
 
 const App = () => {
@@ -16,10 +15,11 @@ const App = () => {
 
   useEffect(() => {
     smooth();
-    gsapEffect();
+
+    menubar();
     menu();
     link();
-    menubar();
+
 
     firebase.auth().onAuthStateChanged((userInfo) => {
       if (userInfo !== null) {
@@ -29,6 +29,7 @@ const App = () => {
       }
     })
   }, [dispatch])
+
 
   return (
     <BrowserRouter>
