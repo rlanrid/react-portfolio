@@ -21,6 +21,7 @@ import Modal from '../components/section/Modal'
 import Loading from '../components/contents/Loading'
 import { gsapEffect } from '../utils/gsapEffect'
 
+
 const HomeView = () => {
     const [showModal, setShowModal] = useState(false);
     const [loading, setLoading] = useState(true);
@@ -32,31 +33,36 @@ const HomeView = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-            gsapEffect();
-        }, 3000)
-    }, []);
 
-    if (loading) {
-        return <Loading />
-    }
+            if (loading === false) {
+                gsapEffect();
+            }
+        }, 5000)
+    }, []);
 
     return (
         <>
-            <Progress />
-            <Header toggleModal={toggleModal} />
-            <Main>
-                <Opening />
-                <Intro appear={appear} />
-                <Port arrowImg={ArrowImg} arrowAlt="화살표이미지" />
-                <More arrowImg={ArrowImg} arrowAlt="화살표이미지" mouse={mouse} />
-                <About arrowImg={ArrowImg} arrowAlt="화살표이미지" />
-                <Stack arrowImg={ArrowImg} arrowAlt="화살표이미지" />
-                <Contact arrowImg={ArrowImg} arrowAlt="화살표이미지" />
-                <Comment arrowImg={ArrowImg} arrowAlt="화살표이미지" toggleModal={toggleModal} />
-            </Main>
-            <Footer />
-            <Modal show={showModal} toggleModal={toggleModal} />
-            <Line />
+            {loading ? (
+                <Loading />
+            ) : (
+                <div className='fade-in' >
+                    <Progress />
+                    <Header toggleModal={toggleModal} />
+                    <Main>
+                        <Opening />
+                        <Intro appear={appear} />
+                        <Port arrowImg={ArrowImg} arrowAlt="화살표이미지" />
+                        <More arrowImg={ArrowImg} arrowAlt="화살표이미지" mouse={mouse} />
+                        <About arrowImg={ArrowImg} arrowAlt="화살표이미지" />
+                        <Stack arrowImg={ArrowImg} arrowAlt="화살표이미지" />
+                        <Contact arrowImg={ArrowImg} arrowAlt="화살표이미지" />
+                        <Comment arrowImg={ArrowImg} arrowAlt="화살표이미지" toggleModal={toggleModal} />
+                    </Main>
+                    <Footer />
+                    <Modal show={showModal} toggleModal={toggleModal} />
+                    <Line />
+                </div>
+            )}
         </>
     )
 }
