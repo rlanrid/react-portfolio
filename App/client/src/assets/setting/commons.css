@@ -3,6 +3,9 @@ body {
     padding-top: 80px;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
 
 canvas {
     width: 100%;
