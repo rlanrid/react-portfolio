@@ -81,7 +81,8 @@ React와 함께 주로 사용되지만, React에 국한되지 않고 다른 Java
 ## 트러블슈팅
 <details>
     <summary>GSAP 애니메이션 재실행 문제</summary>
-    - 문제 원인
+    - 문제 원인   
+    
     const Intro = (props) => {
     const { appear } = props;
 
