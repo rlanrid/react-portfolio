@@ -80,6 +80,27 @@ React와 함께 주로 사용되지만, React에 국한되지 않고 다른 Java
 
 ## 트러블슈팅
 <details>
+    <summary>GSAP 애니메이션 재실행 문제</summary>
+    ```js
+    const Intro = (props) => {
+    const { appear } = props;
+
+    useEffect(() => {
+        appear();
+    }, [appear]);
+
+    useEffect(() => {
+        sliderAppear();
+    }, []);
+    ```
+    - 문제 원인
+    props의 상태가 변경되면 useEffect 훅이 리렌더링 되기 때문에 gsap함수가 계속 재실행되었다.
+
+    - 문제 해결
+    useEffect의 의존성 배열을 props 자체가 아닌 props내부의 특정 속성에 의존하도록 변경하면 해결된다.
+</details>
+<br/>
+<details>
     <summary>failed to push some refs to 오류</summary>
     - 문제 원인
     이는 원격저장소에 내 로컬에는 없는 파일이 있을 때 내 파일을 push하려고하면 발생하는 오류이다.
