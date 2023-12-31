@@ -84,6 +84,17 @@ React와 함께 주로 사용되지만, React에 국한되지 않고 다른 Java
     - 문제 원인   
     
     const Intro = (props) => {
+
+    useEffect(() => {
+        appear();
+        sliderAppear();
+    }, [props]);
+    
+    props의 상태가 변경되면 useEffect 훅이 리렌더링 되기 때문에 gsap함수가 계속 재실행되었다.
+
+    - 문제 해결
+
+    const Intro = (props) => {
     const { appear } = props;
 
     useEffect(() => {
@@ -94,9 +105,6 @@ React와 함께 주로 사용되지만, React에 국한되지 않고 다른 Java
         sliderAppear();
     }, []);
     
-    props의 상태가 변경되면 useEffect 훅이 리렌더링 되기 때문에 gsap함수가 계속 재실행되었다.
-
-    - 문제 해결
     useEffect의 의존성 배열을 props 자체가 아닌 props내부의 특정 속성에 의존하도록 변경하면 해결된다.
 </details>
 <br/>
