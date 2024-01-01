@@ -2,10 +2,16 @@ import React, { useEffect } from 'react'
 import { sliderAppear } from '../../utils/apper';
 
 const Intro = (props) => {
+    const { appear } = props;
+
     useEffect(() => {
-        props.appear();
+        appear();
+    }, [appear]);
+
+    useEffect(() => {
         sliderAppear();
-    }, [props])
+    }, []);
+
     return (
         <section id="intro">
             <h2 className="blind">인트로 섹션</h2>

@@ -38,7 +38,7 @@ const HomeView = () => {
                 gsapEffect();
             }
         }, 5000)
-    }, []);
+    }, [loading]);
 
     return (
         <>
