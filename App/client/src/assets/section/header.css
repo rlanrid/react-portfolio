@@ -67,7 +67,6 @@
 .logo__text {
     color: var(--gainsboro);
     font-size: 20px;
-    /* margin-left: 17px; */
     position: relative;
     cursor: pointer;
     font-family: var(--mainfont-abel);
