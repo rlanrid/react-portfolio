@@ -15,7 +15,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    menubar();
+    // menubar();
     smooth();
 
     setTimeout(() => {
