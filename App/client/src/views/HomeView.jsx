@@ -33,11 +33,11 @@ const HomeView = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-
-            if (loading === false) {
-                gsapEffect();
-            }
         }, 5000)
+
+        if (loading === false) {
+            gsapEffect();
+        }
     }, [loading]);
 
     return (

@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.2",
     "firebase": "^10.7.1",
+    "framer-motion": "^10.17.0",
     "gsap": "^3.12.4",
     "particles.js": "^2.0.0",
     "react": "^18.2.0",
