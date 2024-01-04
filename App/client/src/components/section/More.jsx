@@ -38,6 +38,11 @@ const More = (props) => {
                                         <img src={ImgCol.SmallLinkImg} alt="작은링크화살표" />
                                     </div>
                                 </div>
+                                {/* <div className="more__img__wrap">
+                                    <div className="more__img__inner">
+                                        <img src={item.src} alt={item.alt} className='more__img' />
+                                    </div>
+                                </div> */}
                                 <div className="more__line"></div>
                             </Link>
                         ))}

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 import gsap from 'gsap/all'
 
 const scaleAnimation = {
-    initial: { scale: 0, x: "-50%", y: "-50%" },
-    enter: { scale: 1, x: "-50%", y: "-50%", transition: { duration: 0.4 }, ease: [0.33, 1, 0.68, 1] },
-    closed: { scale: 0, x: "-50%", y: "-50%", transition: { duration: 0.4 }, ease: [0.13, 1, 0.92, 1] }
+    initial: { scale: 0, x: "-83%", y: "-50%" },
+    enter: { scale: 1, x: "-83%", y: "-50%", transition: { duration: 0.4 }, ease: [0.33, 1, 0.68, 1] },
+    closed: { scale: 0, x: "-83%", y: "-50%", transition: { duration: 0.4 }, ease: [0.13, 1, 0.92, 1] }
 }
 
 const Mouse = (props) => {
@@ -18,10 +18,12 @@ const Mouse = (props) => {
         let moveContainerY = gsap.quickTo(container.current, "top", { duration: 0.8, ease: "power3" });
 
         window.addEventListener("mousemove", (e) => {
-            const { clientX, clientY } = e;
 
-            moveContainerX(clientX);
-            moveContainerY(clientY + 25 + "px");
+            const x = e.clientX;
+            const y = e.clientY / 4;
+
+            moveContainerX(x);
+            moveContainerY(y);
         })
     }, [])
 

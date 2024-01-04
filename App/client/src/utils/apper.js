@@ -22,7 +22,7 @@ export function appear() {
     const animate2 = (item) => {
         gsap.fromTo(item,
             { autoAlpha: 0, width: 0 },
-            { autoAlpha: 1, width: 100 + "%", duration: 1.5 }
+            { autoAlpha: 1, width: 100 + "%", duration: 1 }
         )
     }
 
@@ -112,8 +112,7 @@ export function appear() {
             start: "top bottom",
             end: "bottom top",
             once: true,
-            duration: 5,
-            delay: 1,
+            duration: 0.5,
             onEnter: () => { animate2(item) }
         })
     })

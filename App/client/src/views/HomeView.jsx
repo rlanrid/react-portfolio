@@ -33,7 +33,7 @@ const HomeView = () => {
     useEffect(() => {
         setTimeout(() => {
             setLoading(false);
-        }, 5000)
+        }, 6000)
 
         if (loading === false) {
             gsapEffect();

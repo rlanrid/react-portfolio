@@ -189,7 +189,7 @@
 
 @media(max-width:1280px) {
     #opening {
-        height: calc(80vh - 80px);
+        height: calc(100vh - 80px);
     }
 }
 
