@@ -27,6 +27,8 @@ React를 이용해 만든 포트폴리오입니다. UI/UX는 [awwwards](https://
 `npm install firebase`   
 `npm install react-redux`   
 `npm install @reduxjs/toolkit`   
+`npm install gsap`   
+`npm install framer-motion`  
 
 - server   
 `npm init -y;`      
@@ -78,12 +80,17 @@ React와 함께 주로 사용되지만, React에 국한되지 않고 다른 Java
 
 - Redux를 사용하면 복잡한 상태 관리를 간소화하고, 상태의 예측 가능성을 높여주며, 애플리케이션의 테스트와 유지 보수를 용이하게 할 수 있습니다.
 
+## Framer motion & gsap 사용
+- Frmaer motion이란?
+Framer Motion은 React 애니메이션을 간편하게 구현할 수 있도록 도와주는 오픈 소스 라이브러리입니다. 이 라이브러리는 React 애플리케이션에서 풍부하고 부드러운 모션을 쉽게 추가할 수 있도록 설계되었습니다. Framer Motion은 애니메이션 요소를 구성하고 제어하는 데 사용됩니다.
+
+- gsap란?
+GSAP(그린 소켓 애니메이션 플랫폼)은 JavaScript로 작성된 애니메이션 라이브러리 중 하나입니다. GreenSock Animation Platform의 약자로, 웹 애니메이션을 만들고 제어하기 위한 강력하고 유연한 라이브러리입니다. 
+
 ## 트러블슈팅
 <details>
     <summary>GSAP 애니메이션 재실행 문제</summary>
     - 문제 원인   
-    
-    const Intro = (props) => {
 
     useEffect(() => {
         appear();
@@ -94,7 +101,6 @@ React와 함께 주로 사용되지만, React에 국한되지 않고 다른 Java
 
     - 문제 해결
 
-    const Intro = (props) => {
     const { appear } = props;
 
     useEffect(() => {
