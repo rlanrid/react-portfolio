@@ -3,17 +3,23 @@ import React from 'react';
 const Loading = () => {
     return (
         <>
-            <div class="loader">
-                <div class="loader-inner">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/9473/logo-empathia.png" width="25" height="33" alt="Empathia logo" />
-                    <div class="canvas-wrapper">
-                        <canvas class="loader-canvas"></canvas>
-                        <div>
-                            <svg viewBox="0 0 32 32" id="reload">
-                                <path d="M28,16c-1.219,0-1.797,0.859-2,1.766C25.269,21.03,22.167,26,16,26c-5.523,0-10-4.478-10-10S10.477,6,16,6  c2.24,0,4.295,0.753,5.96,2H20c-1.104,0-2,0.896-2,2s0.896,2,2,2h6c1.104,0,2-0.896,2-2V4c0-1.104-0.896-2-2-2s-2,0.896-2,2v0.518  C21.733,2.932,18.977,2,16,2C8.268,2,2,8.268,2,16s6.268,14,14,14c9.979,0,14-9.5,14-11.875C30,16.672,28.938,16,28,16z" />
-                            </svg>
-                        </div>
-                    </div>
+            <div className="loading__wrap">
+                <div className="loading">
+                    <svg className="loading" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                        x="0px" y="0px" width="574.558px" height="190px" viewBox="0 0 574.558 120"
+                        xmlSpace="preserve">
+                        <defs>
+                            <pattern id="water" width=".25" height="1.1" patternContentUnits="objectBoundingBox">
+                                <path fill="#fff" d="M0.25,1H0c0,0,0-0.659,0-0.916c0.083-0.303,0.158,0.334,0.25,0C0.25,0.327,0.25,1,0.25,1z" />
+                            </pattern>
+                            <text id="text" transform="matrix(1 0 0 1 -8.0684 116.7852)" fontSize="161.047">LOADING</text>
+                            <mask id="text_mask">
+                                <use x="0" y="0" href="#text" opacity="1" fill="#E6E6E6" />
+                            </mask>
+                        </defs>
+                        <use x="0" y="0" href="#text" fill="#707070" />
+                        <rect className="water-fill" mask="url(#text_mask)" fill="url(#water)" x="-400" y="0" width="1600" height="120" />
+                    </svg>
                 </div>
             </div>
         </>

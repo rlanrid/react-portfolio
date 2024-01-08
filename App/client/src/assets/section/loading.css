@@ -30,6 +30,12 @@
         fill-up 7s infinite ease-out alternate;
 }
 
+@media(max-width:680px) {
+    .loading svg {
+        transform: scale(0.5);
+    }
+}
+
 @keyframes wave {
     0% {
         x: -400px;
