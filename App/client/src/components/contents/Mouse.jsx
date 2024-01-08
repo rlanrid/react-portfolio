@@ -18,13 +18,12 @@ const Mouse = (props) => {
         let moveContainerY = gsap.quickTo(container.current, "top", { duration: 0.8, ease: "power3" });
 
         const paddingValue = 176; // 빼고 싶은 패딩 값
-        const paddingValue2 = 225; // 빼고 싶은 패딩 값
 
         window.addEventListener("mousemove", (e) => {
             const { clientX, clientY } = e;
 
             const x = clientX - paddingValue;
-            const y = clientY - paddingValue2;
+            const y = clientY;
 
             moveContainerX(x);
             moveContainerY(y);
