@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
-import gsap from 'gsap/all'
+import gsap from 'gsap'
 
 const scaleAnimation = {
-    initial: { scale: 0, x: "-83%", y: "-50%" },
-    enter: { scale: 1, x: "-83%", y: "-50%", transition: { duration: 0.4 }, ease: [0.33, 1, 0.68, 1] },
-    closed: { scale: 0, x: "-83%", y: "-50%", transition: { duration: 0.4 }, ease: [0.13, 1, 0.92, 1] }
+    initial: { scale: 0, x: "-50%", y: "-50%" },
+    enter: { scale: 1, x: "-50%", y: "-50%", transition: { duration: 0.4 }, ease: [0.33, 1, 0.68, 1] },
+    closed: { scale: 0, x: "-50%", y: "-50%", transition: { duration: 0.4 }, ease: [0.13, 1, 0.92, 1] }
 }
 
 const Mouse = (props) => {
@@ -17,10 +17,14 @@ const Mouse = (props) => {
         let moveContainerX = gsap.quickTo(container.current, "left", { duration: 0.8, ease: "power3" });
         let moveContainerY = gsap.quickTo(container.current, "top", { duration: 0.8, ease: "power3" });
 
-        window.addEventListener("mousemove", (e) => {
+        const paddingValue = 176; // 빼고 싶은 패딩 값
+        const paddingValue2 = 225; // 빼고 싶은 패딩 값
 
-            const x = e.clientX;
-            const y = e.clientY / 4;
+        window.addEventListener("mousemove", (e) => {
+            const { clientX, clientY } = e;
+
+            const x = clientX - paddingValue;
+            const y = clientY - paddingValue2;
 
             moveContainerX(x);
             moveContainerY(y);
