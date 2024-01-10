@@ -6,22 +6,15 @@ import firebase from './firebase.js'
 
 import HomeView from './views/HomeView'
 import { link } from './utils/link'
-import { menu } from './utils/menu'
 import { smooth } from './utils/smooth'
-import { menubar } from './utils/menubar'
 
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    menubar();
     smooth();
-
-    setTimeout(() => {
-      menu();
-      link();
-    }, 6000)
+    link();
 
     firebase.auth().onAuthStateChanged((userInfo) => {
       if (userInfo !== null) {
