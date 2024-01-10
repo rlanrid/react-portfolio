@@ -1,4 +1,5 @@
 # Portfolio
+<img src=""/>
 프론트엔드 신입 개발자 김우주의 포트폴리오 입니다.
 
 React를 이용해 만든 포트폴리오입니다. UI/UX는 [awwwards](https://www.awwwards.com/)를 참고하였습니다.
